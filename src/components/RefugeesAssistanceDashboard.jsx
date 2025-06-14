@@ -6,7 +6,7 @@ import TableComponent from "./TableComponent";
 import FilterContext from "../context/FilterContext";
 
 const RefugeesAssistanceDashboard = () => {
-  const { data, loading, error } = useGoogleSheetData("Asistencia a Refugiados");
+  const { data, loading, error } = useGoogleSheetData("Asistencia KAI");
   const { filters } = useContext(FilterContext);
 
   if (loading) return <p>Cargando...</p>;
