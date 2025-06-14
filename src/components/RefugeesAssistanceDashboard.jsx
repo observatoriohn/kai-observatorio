@@ -3,6 +3,7 @@ import useGoogleSheetData from "../hooks/useGoogleSheetData";
 import DashboardCard from "./DashboardCard";
 import BarChartComponent from "./BarChartComponent";
 import TableComponent from "./TableComponent";
+import FilterContext from "../context/FilterContext";
 
 const RefugeesAssistanceDashboard = () => {
   const { data, loading, error } = useGoogleSheetData("Asistencia a Refugiados");
