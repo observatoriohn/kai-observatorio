@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import useGoogleSheetData from "../hooks/useGoogleSheetData";
+import usePublishedGoogleSheetCSV from "../hooks/usePublishedGoogleSheetCSV";
 import DashboardCard from "./DashboardCard";
 import BarChartComponent from "./BarChartComponent";
 import TableComponent from "./TableComponent";
 import FilterContext from "../context/FilterContext";
 
 const GeneralizedViolenceDashboard = () => {
-  const { data, loading, error } = useGoogleSheetData("Violencia Generalizada");
+  const { data, loading, error } = uusePublishedGoogleSheetCSV(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQl62L5XmFTyaCIKNG6lZ983BQkDIuRTgsrx47wqjxFofolxqbcug7-czk1EvhEAQ/pub?output=csv"
+  );
   const { filters } = useContext(FilterContext);
 
   if (loading) return <p>Cargando...</p>;
