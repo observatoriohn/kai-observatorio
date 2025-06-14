@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-//import Header from "./components/Header";
-import PillarNavigation from "./components/PillarNavigation";
+import Header from "./components/Header";
+//import PillarNavigation from "./components/PillarNavigation";
 import ViolentDeathsDashboard from "./components/ViolentDeathsDashboard";
 import GeneralizedViolenceDashboard from "./components/GeneralizedViolenceDashboard";
 import MissingPersonsDashboard from "./components/MissingPersonsDashboard";
