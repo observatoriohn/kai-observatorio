@@ -6,9 +6,8 @@ import TableComponent from "./TableComponent";
 import FilterContext from "../context/FilterContext";
 
 const GeneralizedViolenceDashboard = () => {
-  const { data, loading, error } = uusePublishedGoogleSheetCSV(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQl62L5XmFTyaCIKNG6lZ983BQkDIuRTgsrx47wqjxFofolxqbcug7-czk1EvhEAQ/pub?output=csv"
-  );
+  const { data, loading, error } = const { data, loading, error } = usePublishedGoogleSheetCSV();
+
   const { filters } = useContext(FilterContext);
 
   if (loading) return <p>Cargando...</p>;
