@@ -5,8 +5,8 @@ import ViolentDeathsDashboard from "./components/ViolentDeathsDashboard";
 import GeneralizedViolenceDashboard from "./components/GeneralizedViolenceDashboard";
 import MissingPersonsDashboard from "./components/MissingPersonsDashboard";
 import RefugeesAssistanceDashboard from "./components/RefugeesAssistanceDashboard";
-//import DataExplorer from "./components/DataExplorer";
-import {FilterProvider} from "./context/FilterContext";
+import DataExplorer from "./components/DataExplorer";
+//import {FilterProvider} from "./context/FilterContext";
 
 function App() {
   const [activeTab, setActiveTab] = useState("pillars");
