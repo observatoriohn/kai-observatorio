@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import Header from "./components/Header";
 import PillarNavigation from "./components/PillarNavigation";
 import ViolentDeathsDashboard from "./components/ViolentDeathsDashboard";
@@ -6,7 +6,7 @@ import GeneralizedViolenceDashboard from "./components/GeneralizedViolenceDashbo
 import MissingPersonsDashboard from "./components/MissingPersonsDashboard";
 import RefugeesAssistanceDashboard from "./components/RefugeesAssistanceDashboard";
 import DataExplorer from "./components/DataExplorer";
-//import {FilterProvider} from "./context/FilterContext";
+import {FilterProvider} from "./context/FilterContext";
 
 function App() {
   const [activeTab, setActiveTab] = useState("pillars");
