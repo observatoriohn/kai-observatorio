@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import useGoogleSheetData from "../hooks/useGoogleSheetData";
+import usePublishedGoogleSheetCSV from "../hooks/usePublishedGoogleSheetCSV"; // ajusta la ruta si está en otro lugar
 import DashboardCard from "./DashboardCard";
 import BarChartComponent from "./BarChartComponent";
 import TableComponent from "./TableComponent";
 import FilterContext from "../context/FilterContext";
 
 const MissingPersonsDashboard = () => {
-  const { data, loading, error } = useGoogleSheetData("Personas Desaparecidas");
+  const { data, loading, error } = usePublishedGoogleSheetCSV();
   const { filters } = useContext(FilterContext);
 
   if (loading) return <p>Cargando...</p>;
