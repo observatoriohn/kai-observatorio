@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 // Reemplaza con tu ID de Google Sheet
 const SHEET_ID = "1RUfBXyXllnau6CjIk7h1YZFEXVIpVESJ";
-const API_KEY = ""; // Deja vacío si es público
+const API_KEY = "AIzaSyBEYT4J655OKAOaTLyZPH2xdcOwuveAVsY"; // Deja vacío si es público
 
 const useGoogleSheetData = (sheetName) => {
   const [data, setData] = useState(null);
