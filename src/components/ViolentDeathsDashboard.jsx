@@ -4,6 +4,7 @@ import DashboardCard from "./DashboardCard";
 import BarChartComponent from "./BarChartComponent";
 import TableComponent from "./TableComponent";
 import MapComponent from "./MapComponent";
+import FilterContext from "../context/FilterContext";
 
 const ViolentDeathsDashboard = () => {
   const { data, loading, error } = useGoogleSheetData("Muertes Violentas");
