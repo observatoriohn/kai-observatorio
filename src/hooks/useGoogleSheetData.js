@@ -39,4 +39,4 @@ const usePublishedGoogleSheetCSV = () => {
   return { data, loading, error };
 };
 
-export default useGoogleSheetData;
+export default usePublishedGoogleSheetCSV;
