@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import useGoogleSheetData from "../hooks/useGoogleSheetData";
 import FilterBar from "./FilterBar";
 import TableComponent from "./TableComponent";
+import FilterContext from "../context/FilterContext";
 
 const DataExplorer = () => {
   const { data, loading, error } = useGoogleSheetData("Datos Generales");
