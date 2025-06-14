@@ -1,34 +1,40 @@
 import { useEffect, useState } from "react";
 
-// Reemplaza con tu ID de Google Sheet
-const SHEET_ID = "1RUfBXyXllnau6CjIk7h1YZFEXVIpVESJ";
-const API_KEY = " "; // Deja vacío si es público
+const SHEET_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQl62L5XmFTyaCIKNG6lZ983BQkDIuRTgsrx47wqjxFofolxqbcug7-czk1EvhEAQ/pub?output=csv";
 
-const useGoogleSheetData = (sheetName) => {
-  const [data, setData] = useState(null);
+const usePublishedGoogleSheetCSV = () => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}?key=${API_KEY}`
-        );
+    fetch(SHEET_CSV_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error("Error al obtener el CSV");
+        return res.text();
+      })
+      .then((csvText) => {
+        const [headerLine, ...rows] = csvText.trim().split("\n");
+        const headers = headerLine.split(",");
 
-        if (!response.ok) throw new Error("Error al cargar datos");
+        const json = rows.map((row) => {
+          const values = row.split(",");
+          return headers.reduce((obj, key, i) => {
+            obj[key.trim()] = values[i]?.trim() ?? "";
+            return obj;
+          }, {});
+        });
 
-        const result = await response.json();
-        setData(result.values);
+        setData(json);
         setLoading(false);
-      } catch (err) {
+      })
+      .catch((err) => {
+        console.error("Error al cargar CSV:", err);
         setError(err.message);
         setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [sheetName]);
+      });
+  }, []);
 
   return { data, loading, error };
 };
