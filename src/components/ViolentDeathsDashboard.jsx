@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import useGoogleSheetData from "../hooks/useGoogleSheetData";
+import usePublishedGoogleSheetCSV from "../hooks/usePublishedGoogleSheetCSV"; // ajusta la ruta si está en otro lugar
 import DashboardCard from "./DashboardCard";
 import BarChartComponent from "./BarChartComponent";
 import TableComponent from "./TableComponent";
@@ -7,7 +7,7 @@ import MapComponent from "./MapComponent";
 import FilterContext from "../context/FilterContext";
 
 const ViolentDeathsDashboard = () => {
-  const { data, loading, error } = useGoogleSheetData("Muertes Violentas");
+  const { data, loading, error } = usePublishedGoogleSheetCSV();
   const { filters } = useContext(FilterContext);
 
   if (loading) return <p>Cargando...</p>;
